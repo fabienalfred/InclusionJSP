@@ -9,7 +9,12 @@
 <body>
 	<h2>
 		<%
-			out.print("Bonjour "+request.getParameter("prenom")+" "+request.getParameter("nom"));
+			String nom = request.getParameter("nom");
+			String prenom = request.getParameter("prenom");
+			if(nom==null || nom.isEmpty() || prenom==null || prenom.isEmpty())
+				out.print("<br />");
+			else
+				out.print("Bonjour "+prenom+" "+nom);
 		%>
 	</h2>
 </body>
